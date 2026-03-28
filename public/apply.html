@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply - ConGlobal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url('/bg.jpg.webp') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+
+    /* DARK OVERLAY */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.65);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 15px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    input[type="file"] {
+      background: white;
+      color: black;
+      padding: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0a2540;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #133b63;
+    }
+
+    .spinner {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .spinner div {
+      width: 30px;
+      height: 30px;
+      border: 4px solid #fff;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .success {
+      display: none;
+      margin-top: 15px;
+      color: lightgreen;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <form class="container" id="form" action="/apply" method="POST" enctype="multipart/form-data">
+
+```
+<!-- LOGO -->
+<img src="/logo.png" class="logo" alt="logo">
+
+<h2>Apply for a Position</h2>
+
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
+
+<select name="position" required>
+  <option value="">Select Position</option>
+  <option>Equipment Operator</option>
+  <option>Warehouse Associate</option>
+  <option>Truck Driver</option>
+</select>
+
+<input type="file" name="resume" required>
+
+<button type="submit">Submit Application</button>
+
+<!-- LOADING -->
+<div class="spinner" id="spinner">
+  <div></div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success" id="success">
+  ✅ Application submitted successfully!
+</div>
+```
+
+  </form>
+
+  <script>
+    const form = document.getElementById('form');
+    const spinner = document.getElementById('spinner');
+    const success = document.getElementById('success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      spinner.style.display = 'block';
+      success.style.display = 'none';
+
+      const formData = new FormData(form);
+
+      try {
+        await fetch('/apply', {
+          method: 'POST',
+          body: formData
+        });
+
+        spinner.style.display = 'none';
+        success.style.display = 'block';
+        form.reset();
+
+      } catch (err) {
+        spinner.style.display = 'none';
+        alert('Error submitting application');
+      }
+    });
+  </script>
+
+</body>
+</html>
