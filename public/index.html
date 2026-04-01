@@ -22,7 +22,7 @@
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+      url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -39,7 +39,6 @@
       max-width: 700px;
     }
 
-    /* 🔥 FIXED TEXT SIZE */
     .hero-content h1 {
       font-size: clamp(32px, 5vw, 64px);
       margin-bottom: 20px;
@@ -64,18 +63,85 @@
       background: #16a34a;
     }
 
+    /* FORM SECTION */
+    #form-section {
+      display: none;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .form-box {
+      max-width: 400px;
+      margin: auto;
+      background: rgba(0,0,0,0.7);
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .form-box h2 {
+      margin-bottom: 15px;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      background: #22c55e;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-box button:hover {
+      background: #16a34a;
+    }
+
   </style>
 </head>
 
 <body>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <h1>Join ConGlobal Logistics</h1>
       <p>Modern workforce powering global supply chains</p>
-      <button>Apply Now</button>
+      <button onclick="showForm()">Apply Now</button>
     </div>
   </section>
+
+  <!-- FORM -->
+  <section id="form-section">
+    <div class="form-box">
+      <h2>Apply Now</h2>
+
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <button type="submit">Submit Application</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    function showForm() {
+      const form = document.getElementById("form-section");
+      form.style.display = "block";
+      form.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 
 </body>
 </html>
