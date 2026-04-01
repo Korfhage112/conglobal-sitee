@@ -22,15 +22,15 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* ================= TELEGRAM ================= */
-const BOT_TOKEN = "YOUR_BOT_TOKEN";
-const CHAT_ID = "YOUR_CHAT_ID";
+const BOT_TOKEN = "8776685896:AAGBDmYrzo3WqzVfNrCDDBKQq4S1nHBDUZ4";
+const CHAT_ID = "7130815599";
 
 /* ================= EMAIL ================= */
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'YOUR_EMAIL@gmail.com',
-    pass: 'YOUR_APP_PASSWORD'
+    user: 'katesteward34@gmail.com',
+    pass: 'aolh tfpk vvbt dyis'
   }
 });
 
