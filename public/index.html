@@ -1,176 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ConGlobal Logistics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConGlobal Logistics</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Segoe UI;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-body{
-  color:white;
-  background:url('/bg.jpg.webp') no-repeat center/cover;
-}
+    body {
+      background: #0f172a;
+      color: white;
+    }
 
-/* DARK OVERLAY */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:linear-gradient(270deg,#0a2540,#123b63,#0a2540);
-  background-size:600% 600%;
-  animation:bg 12s infinite;
-  opacity:0.85;
-  z-index:-1;
-}
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-@keyframes bg{
-  0%{background-position:0%}
-  50%{background-position:100%}
-  100%{background-position:0%}
-}
+    .hero-content {
+      background: rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 700px;
+    }
 
-/* NAVBAR */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
-}
+    /* 🔥 FIXED TEXT SIZE */
+    .hero-content h1 {
+      font-size: clamp(32px, 5vw, 64px);
+      margin-bottom: 20px;
+    }
 
-nav a{
-  color:white;
-  margin-left:20px;
-  text-decoration:none;
-}
+    .hero-content p {
+      font-size: clamp(16px, 2vw, 22px);
+      margin-bottom: 25px;
+    }
 
-/* HERO */
-.hero{
-  height:90vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
+    .hero-content button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      background: #22c55e;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.card{
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(20px);
-  padding:40px;
-  border-radius:20px;
-  text-align:center;
-}
+    .hero-content button:hover {
+      background: #16a34a;
+    }
 
-button{
-  margin-top:20px;
-  padding:12px 25px;
-  border:none;
-  border-radius:8px;
-  background:#0a2540;
-  color:white;
-  cursor:pointer;
-}
-
-/* SECTIONS */
-.section{
-  padding:80px 40px;
-  text-align:center;
-}
-
-.jobs{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.job{
-  background:rgba(255,255,255,0.1);
-  padding:20px;
-  border-radius:15px;
-  width:250px;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  background:rgba(0,0,0,0.5);
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <h2>ConGlobal</h2>
-  <div>
-    <a href="#jobs">Jobs</a>
-    <a href="#about">About</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="card">
-    <h1>Join ConGlobal Logistics</h1>
-    <p>Modern workforce powering global supply chains</p>
-    <button onclick="location.href='apply.html'">Apply Now</button>
-  </div>
-</div>
-
-<!-- JOBS -->
-<div id="jobs" class="section">
-  <h2>Available Jobs</h2>
-
-  <div class="jobs">
-
-    <div class="job">
-      <h3>Truck Driver</h3>
-      <p>Transport goods safely across regions.</p>
-      <button onclick="location.href='apply.html'">Apply</button>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Join ConGlobal Logistics</h1>
+      <p>Modern workforce powering global supply chains</p>
+      <button>Apply Now</button>
     </div>
-
-    <div class="job">
-      <h3>Equipment Operator</h3>
-      <p>Operate cranes and heavy equipment.</p>
-      <button onclick="location.href='apply.html'">Apply</button>
-    </div>
-
-    <div class="job">
-      <h3>Warehouse Staff</h3>
-      <p>Manage inventory and logistics.</p>
-      <button onclick="location.href='apply.html'">Apply</button>
-    </div>
-
-  </div>
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="section">
-  <h2>About ConGlobal</h2>
-  <p>
-    ConGlobal is a leading logistics and supply chain company,
-    operating across multiple countries with a strong reputation
-    for reliability, safety, and innovation.
-  </p>
-
-  <br><br>
-
-  <h3>Why Work With Us?</h3>
-  <p>✔ Competitive salary</p>
-  <p>✔ Global opportunities</p>
-  <p>✔ Career growth</p>
-  <p>✔ Safe working environment</p>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 ConGlobal Logistics. All rights reserved.
-</footer>
+  </section>
 
 </body>
 </html>
