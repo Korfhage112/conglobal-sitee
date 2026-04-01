@@ -3,62 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ConGlobal Logistics</title>
+<title>ConGlobal Careers</title>
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
+body {
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+}
 
-body { background:#0f172a; color:white; }
-
+/* NAVBAR */
 .navbar {
   position:fixed;
   width:100%;
   top:0;
   display:flex;
   justify-content:space-between;
-  padding:15px 30px;
-  background:rgba(0,0,0,0.7);
+  padding:15px 40px;
+  background:rgba(0,0,0,0.8);
 }
 
-.navbar a { color:white; text-decoration:none; margin-left:20px; }
+.navbar a {
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+}
 
+/* HERO */
 .hero {
   height:100vh;
-  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
   url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
   background-size:cover;
-  background-position:center;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
 }
 
-.hero-content {
-  background:rgba(0,0,0,0.6);
-  padding:40px;
-  border-radius:10px;
+.hero h1 {
+  font-size:60px;
 }
 
-.hero-content h1 {
-  font-size:clamp(36px, 6vw, 70px);
-}
-
-.hero-content p {
+.hero p {
+  font-size:20px;
   margin:20px 0;
-  font-size:18px;
 }
 
 button {
   padding:12px 25px;
   background:#22c55e;
-  color:white;
   border:none;
+  color:white;
+  font-size:16px;
 }
 
+/* ABOUT */
 .about {
   padding:80px 20px;
   text-align:center;
+  max-width:800px;
+  margin:auto;
+}
+
+/* FOOTER */
+.footer {
+  text-align:center;
+  padding:20px;
+  background:black;
+  margin-top:40px;
+  font-size:14px;
 }
 </style>
 </head>
@@ -66,7 +81,7 @@ button {
 <body>
 
 <div class="navbar">
-  <div><strong>ConGlobal</strong></div>
+  <div><strong>ConGlobal Careers</strong></div>
   <div>
     <a href="about.html">About</a>
     <a href="apply.html">Apply</a>
@@ -74,24 +89,27 @@ button {
 </div>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Join ConGlobal Logistics</h1>
-    <p>Modern workforce powering global supply chains</p>
+  <div>
+    <h1>Build Your Career With Us</h1>
+    <p>Join a global logistics workforce</p>
 
     <a href="apply.html">
       <button>Apply Now</button>
     </a>
-
   </div>
 </section>
 
 <section class="about">
-  <h2>About ConGlobal Logistics</h2>
+  <h2>About ConGlobal</h2>
   <p>
-    ConGlobal Logistics is a global supply chain company providing reliable
-    cargo handling, warehousing, and distribution services worldwide.
+    ConGlobal is a leading provider of logistics and supply chain services,
+    delivering efficiency, reliability, and innovation across global markets.
   </p>
 </section>
+
+<div class="footer">
+  © 2026 ConGlobal Logistics Careers
+</div>
 
 </body>
 </html>
