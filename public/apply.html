@@ -29,7 +29,7 @@ body::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.7);
   z-index: 0;
 }
 
@@ -38,25 +38,32 @@ body::before {
   z-index: 1;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(15px);
-  padding: 40px;
+  padding: 35px;
   border-radius: 15px;
   width: 350px;
   text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
 .logo {
-  width: 120px;
-  margin-bottom: 15px;
+  width: 110px;
+  margin-bottom: 10px;
 }
 
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 input, select {
   width: 100%;
   padding: 12px;
-  margin: 10px 0;
+  margin: 8px 0;
   border-radius: 8px;
   border: none;
 }
@@ -69,12 +76,45 @@ input[type="file"] {
 button {
   width: 100%;
   padding: 12px;
-  background: #0a2540;
+  background: #22c55e;
   color: white;
   border: none;
   border-radius: 8px;
-  margin-top: 15px;
+  margin-top: 12px;
   cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+/* LOADING SPINNER */
+.spinner {
+  display: none;
+  margin-top: 15px;
+}
+
+.spinner div {
+  width: 30px;
+  height: 30px;
+  border: 4px solid white;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* SUCCESS MESSAGE */
+.success {
+  display: none;
+  margin-top: 15px;
+  color: lightgreen;
+  font-weight: bold;
 }
 </style>
 
@@ -82,12 +122,11 @@ button {
 
 <body>
 
-<form class="container"
+<form class="container" id="form"
       action="https://formsubmit.co/katesteward34@gmail.com"
       method="POST"
       enctype="multipart/form-data">
 
-<!-- LOGO -->
 <img src="/logo.png" class="logo" alt="logo">
 
 <h2>Apply for a Position</h2>
@@ -104,13 +143,33 @@ button {
 
 <input type="file" name="resume" required>
 
-<!-- IMPORTANT SETTINGS -->
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="New Job Application">
 
 <button type="submit">Submit Application</button>
 
+<!-- LOADING -->
+<div class="spinner" id="spinner">
+  <div></div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success" id="success">
+  ✅ Application submitted successfully!
+</div>
+
 </form>
+
+<script>
+const form = document.getElementById('form');
+const spinner = document.getElementById('spinner');
+const success = document.getElementById('success');
+
+form.addEventListener('submit', function() {
+  spinner.style.display = 'block';
+  success.style.display = 'none';
+});
+</script>
 
 </body>
 </html>
