@@ -1,187 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ConGlobal Logistics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConGlobal Logistics</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial; }
 
-    body {
-      background: #0f172a;
-      color: white;
-    }
+body { background:#0f172a; color:white; }
 
-    /* NAVBAR */
-    .navbar {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 30px;
-      background: rgba(0,0,0,0.6);
-    }
+.navbar {
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 30px;
+  background:rgba(0,0,0,0.7);
+}
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-    }
+.navbar a { color:white; text-decoration:none; margin-left:20px; }
 
-    /* HERO */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-      url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
+.hero {
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
 
-    .hero-content {
-      background: rgba(0,0,0,0.6);
-      padding: 40px;
-      border-radius: 10px;
-      max-width: 700px;
-    }
+.hero-content {
+  background:rgba(0,0,0,0.6);
+  padding:40px;
+  border-radius:10px;
+}
 
-    .hero-content h1 {
-      font-size: clamp(32px, 5vw, 64px);
-      margin-bottom: 20px;
-    }
+.hero-content h1 {
+  font-size:clamp(36px, 6vw, 70px);
+}
 
-    .hero-content p {
-      font-size: clamp(16px, 2vw, 22px);
-      margin-bottom: 25px;
-    }
+.hero-content p {
+  margin:20px 0;
+  font-size:18px;
+}
 
-    .hero-content button {
-      padding: 12px 25px;
-      background: #22c55e;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+button {
+  padding:12px 25px;
+  background:#22c55e;
+  color:white;
+  border:none;
+}
 
-    /* ABOUT SECTION */
-    .about {
-      padding: 80px 20px;
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .about h2 {
-      margin-bottom: 20px;
-      font-size: 32px;
-    }
-
-    .about p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    /* FORM */
-    #form-section {
-      display: none;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .form-box {
-      max-width: 400px;
-      margin: auto;
-      background: rgba(0,0,0,0.7);
-      padding: 25px;
-      border-radius: 10px;
-    }
-
-    .form-box input, .form-box button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .form-box button {
-      background: #22c55e;
-      color: white;
-    }
-
-  </style>
+.about {
+  padding:80px 20px;
+  text-align:center;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div><strong>ConGlobal</strong></div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#" onclick="showForm()">Apply</a>
-    </div>
+<div class="navbar">
+  <div><strong>ConGlobal</strong></div>
+  <div>
+    <a href="about.html">About</a>
+    <a href="apply.html">Apply</a>
   </div>
+</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Join ConGlobal Logistics</h1>
-      <p>Modern workforce powering global supply chains</p>
-      <button onclick="showForm()">Apply Now</button>
-    </div>
-  </section>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Join ConGlobal Logistics</h1>
+    <p>Modern workforce powering global supply chains</p>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <h2>About ConGlobal Logistics</h2>
-    <p>
-      ConGlobal Logistics is a leading provider of global supply chain solutions,
-      specializing in efficient cargo handling, warehouse management, and
-      distribution services. Our mission is to connect businesses worldwide
-      through reliable and innovative logistics solutions.
-      <br><br>
-      With a commitment to excellence, technology-driven operations, and a
-      dedicated workforce, we ensure timely delivery and customer satisfaction
-      across all our services.
-    </p>
-  </section>
+    <a href="apply.html">
+      <button>Apply Now</button>
+    </a>
 
-  <!-- FORM -->
-  <section id="form-section">
-    <div class="form-box">
-      <h2>Apply Now</h2>
+  </div>
+</section>
 
-      <!-- 🔥 PUT YOUR EMAIL -->
-      <form action="https://formsubmit.co/YOUR-EMAIL@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <button type="submit">Submit Application</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- SCRIPT -->
-  <script>
-    function showForm() {
-      const form = document.getElementById("form-section");
-      form.style.display = "block";
-      form.scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
+<section class="about">
+  <h2>About ConGlobal Logistics</h2>
+  <p>
+    ConGlobal Logistics is a global supply chain company providing reliable
+    cargo handling, warehousing, and distribution services worldwide.
+  </p>
+</section>
 
 </body>
 </html>
