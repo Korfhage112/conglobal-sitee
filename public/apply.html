@@ -1,77 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Apply - ConGlobal</title>
+  <meta charset="UTF-8">
+  <title>Apply - ConGlobal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-  background:#0b1220;
-  color:white;
-  font-family:Arial;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-.container{
-  background:#020617;
-  padding:30px;
-  border-radius:10px;
-  width:320px;
-  text-align:center;
-}
+    body {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
 
-input, select{
-  width:100%;
-  padding:10px;
-  margin:10px 0;
-  border:none;
-  border-radius:5px;
-}
+    .container {
+      background: rgba(0,0,0,0.7);
+      padding: 40px;
+      border-radius: 15px;
+      width: 350px;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
 
-button{
-  width:100%;
-  padding:12px;
-  background:#2563eb;
-  color:white;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
-}
-</style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #22c55e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+  </style>
 </head>
 
 <body>
 
-<form class="container"
-action="https://formsubmit.co/katesteward34@gmail.com"
-method="POST"
-enctype="multipart/form-data">
+  <form class="container" action="https://formsubmit.co/katesteward34@gmail.com" method="POST" enctype="multipart/form-data">
 
-<h2>Apply</h2>
+    <!-- 🔥 REPLACE WITH YOUR LOGO FILE -->
+    <img src="logo.png" class="logo" alt="logo">
 
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email" required>
+    <h2>Apply for a Position</h2>
 
-<select name="position" required>
-<option value="">Select Position</option>
-<option>Driver</option>
-<option>Warehouse</option>
-<option>Operator</option>
-</select>
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
 
-<input type="file" name="attachment" required>
+    <select name="position" required>
+      <option value="">Select Position</option>
+      <option>Equipment Operator</option>
+      <option>Warehouse Associate</option>
+      <option>Truck Driver</option>
+    </select>
 
-<!-- IMPORTANT SETTINGS -->
-<input type="hidden" name="_subject" value="New Application">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://conglobal-app.onrender.com/success.html">
+    <!-- FILE UPLOAD -->
+    <input type="file" name="attachment" required>
 
-<button type="submit">Submit Application</button>
+    <!-- HIDDEN SETTINGS -->
+    <input type="hidden" name="_subject" value="New Job Application!">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
 
-</form>
+    <button type="submit">Submit Application</button>
+
+  </form>
 
 </body>
 </html>
