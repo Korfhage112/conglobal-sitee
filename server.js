@@ -78,7 +78,11 @@ app.post('/apply', upload.single('resume'), async (req, res) => {
       })
     });
 
-    res.send("Application submitted successfully!");
+    // To show success page
+res.sendFile(path.join(__dirname, 'success.html'));
+
+// OR, to show thankyou page
+// res.sendFile(path.join(__dirname, 'thankyou.html'));
   } catch (err) {
     console.error(err);
     res.status(500).send("Error submitting application");
