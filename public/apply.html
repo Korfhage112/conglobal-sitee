@@ -6,22 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
 
     body {
-      height: 100vh;
+      height:100vh;
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-      url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
+                  url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');
       background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
+      background-position: center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
     }
 
     .container {
@@ -29,73 +25,66 @@
       padding: 40px;
       border-radius: 15px;
       width: 350px;
-      text-align: center;
+      text-align:center;
       animation: fadeIn 1s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity:0; transform: translateY(20px); }
+      to { opacity:1; transform: translateY(0); }
     }
 
     .logo {
-      width: 120px;
-      margin-bottom: 15px;
+      width:120px;
+      margin-bottom:15px;
     }
 
     input, select {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: none;
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border-radius:8px;
+      border:none;
+      font-size:14px;
     }
 
-    /* Upload button styling */
     .upload-btn {
-      display: inline-block;
-      width: 100%;
-      padding: 12px;
-      background-color: #22c55e;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-      font-weight: 500;
+      display:inline-block;
+      width:100%;
+      padding:12px;
+      background-color:#22c55e;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+      margin-top:10px;
+      font-weight:500;
     }
 
-    .upload-btn:hover {
-      background-color: #16a34a;
-    }
+    .upload-btn:hover { background-color:#16a34a; }
 
     button {
-      width: 100%;
-      padding: 12px;
-      background: #22c55e;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 15px;
-      font-weight: bold;
+      width:100%;
+      padding:12px;
+      background:#22c55e;
+      color:white;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      margin-top:15px;
+      font-weight:bold;
+      font-size:16px;
     }
 
-    button:hover {
-      background: #16a34a;
-    }
+    button:hover { background:#16a34a; }
 
-    small {
-      display: block;
-      margin-top: 5px;
-      color: #ccc;
-    }
+    small { display:block; margin-top:5px; color:#ccc; font-size:12px; }
   </style>
 </head>
 
 <body>
 
   <form class="container" 
-        action="https://formsubmit.co/katesteward34@gmail.com" 
+        action="/apply" 
         method="POST" 
         enctype="multipart/form-data">
 
@@ -107,7 +96,6 @@
 
     <input type="email" name="email" placeholder="Email Address" required>
 
-    <!-- ✅ FIXED PHONE FIELD -->
     <input type="tel" name="phone" placeholder="(123) 456-7890" required>
 
     <select name="position" required>
@@ -117,22 +105,10 @@
       <option>Truck Driver</option>
     </select>
 
-    <!-- ✅ CLEAN FILE UPLOAD -->
-    <input type="file" id="resume" name="attachment" hidden required>
-
-    <label for="resume" class="upload-btn">
-      + Add Application (Resume)
-    </label>
+    <input type="file" id="resume" name="resume" hidden required>
+    <label for="resume" class="upload-btn">+ Add Application (Resume)</label>
 
     <small>Accepted formats: PDF, DOC, DOCX</small>
-
-    <!-- FORM SETTINGS -->
-    <input type="hidden" name="_subject" value="New Job Application!">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-
-    <!-- ✅ SUCCESS MESSAGE REDIRECT -->
-    <input type="hidden" name="_next" value="https://conglobal-app.onrender.com/success.html">
 
     <button type="submit">Submit Application</button>
 
