@@ -25,7 +25,7 @@
     }
 
     .container {
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.75);
       padding: 40px;
       border-radius: 15px;
       width: 350px;
@@ -51,6 +51,23 @@
       border: none;
     }
 
+    /* Upload button styling */
+    .upload-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 12px;
+      background-color: #22c55e;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .upload-btn:hover {
+      background-color: #16a34a;
+    }
+
     button {
       width: 100%;
       padding: 12px;
@@ -59,29 +76,39 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 15px;
+      font-weight: bold;
     }
 
     button:hover {
       background: #16a34a;
     }
 
+    small {
+      display: block;
+      margin-top: 5px;
+      color: #ccc;
+    }
   </style>
 </head>
 
 <body>
 
-  <form class="container" action="https://formsubmit.co/katesteward34@gmail.com" method="POST" enctype="multipart/form-data">
+  <form class="container" 
+        action="https://formsubmit.co/katesteward34@gmail.com" 
+        method="POST" 
+        enctype="multipart/form-data">
 
-    <!-- 🔥 REPLACE WITH YOUR LOGO FILE -->
     <img src="logo.png" class="logo" alt="logo">
 
     <h2>Apply for a Position</h2>
 
     <input type="text" name="name" placeholder="Full Name" required>
+
     <input type="email" name="email" placeholder="Email Address" required>
-    <input type="email" name="email" placeholder="Phone NUmber" required>
-    <input type="email" name="email" placeholder="Home Address" required>
+
+    <!-- ✅ FIXED PHONE FIELD -->
+    <input type="tel" name="phone" placeholder="(123) 456-7890" required>
 
     <select name="position" required>
       <option value="">Select Position</option>
@@ -90,13 +117,22 @@
       <option>Truck Driver</option>
     </select>
 
-    <!-- FILE UPLOAD -->
-    <input type="file" name="attachment" required>
+    <!-- ✅ CLEAN FILE UPLOAD -->
+    <input type="file" id="resume" name="attachment" hidden required>
 
-    <!-- HIDDEN SETTINGS -->
+    <label for="resume" class="upload-btn">
+      + Add Application (Resume)
+    </label>
+
+    <small>Accepted formats: PDF, DOC, DOCX</small>
+
+    <!-- FORM SETTINGS -->
     <input type="hidden" name="_subject" value="New Job Application!">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
+
+    <!-- ✅ SUCCESS MESSAGE REDIRECT -->
+    <input type="hidden" name="_next" value="https://conglobal-app.onrender.com/success.html">
 
     <button type="submit">Submit Application</button>
 
